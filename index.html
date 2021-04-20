@@ -7,31 +7,32 @@
 </head>
 
 <body>
-    <div class="front-page">
-        <h2 class="header">Note Taker App</h2>
-            <textarea id="note" name="note-text" class="note-area"></textarea>
-            <br>
-            <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
-        <div class="notes-link">
-            <a href="index2.html">View Notes</a>
-        </div> 
-    </div>
+  <div class="front-page">
+    <h2 class="header">Note Taker App</h2>
+    <textarea id="note" name="note-text" class="note-area"></textarea>
+    <br />
+    <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
+    <div class="notes-link">
+      <a href="index2.html">View Notes</a>
+    </div> 
+  </div>
 </body>
 
 <script>
-var textElement = document.getElementById("note")
+  var textElement = document.getElementById("note");
 
-function saveNote() {
+  function saveNote() {
     if(textElement.value == "") {
-        return alert('text is empty!')
+        return alert("text is empty!");
     }
-    const id = getNoteId()
-    let noteObject = getExistingNotes()
-    if(!noteObject){
-        noteObject = {}
+    const id = getNoteId();
+    let noteObject = getExistingNotes();
+    if (!noteObject) {
+        noteObject = {};
     }
-    noteObject[id]= textElelemnt.value
-    localSotrage.setItem('notes', JSON.stringify(noteObject))
-    alert('Note Saved!')
-}
+    noteObject[id] = textElement.value;
+    localStorage.setItem("notes", JSON.stringify(noteObject));
+    alert("Note Saved!");
+
+  }
 </script>
